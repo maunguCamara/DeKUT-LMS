@@ -1,6 +1,7 @@
 package com.example.livestockmanagement.ui.cattle;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -8,7 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+
 import com.example.livestockmanagement.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -17,6 +21,7 @@ public class CowListActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CowAdapter cowAdapter;
     private CowDAO cowDao;
+    private FloatingActionButton syncData;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +32,10 @@ public class CowListActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         cowDao = new CowDAO(this);
+
+        syncData  = findViewById(R.id.fab);
+
+
 
         fetchAndDisplayCows();
     }

@@ -28,12 +28,12 @@ public class CowDAO {
         values.put(DatabaseHelper.COLUMN_AGE, cow.getAge());
         values.put(DatabaseHelper.COLUMN_PURPOSE, cow.getPurpose());
         values.put(DatabaseHelper.COLUMN_WEIGHT, cow.getWeight());
-        database.insert(DatabaseHelper.TABLE_COWS, null, values);
+        database.insert(DatabaseHelper.TABLE_NAME, null, values);
     }
 
     public List<Cow> getAllCows() {
         List<Cow> cows = new ArrayList<>();
-        Cursor cursor = database.query(DatabaseHelper.TABLE_COWS, null, null, null, null, null, null);
+        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, null, null, null, null, null, null);
         if (cursor.moveToFirst()) {
             do {
                 int idIndex = cursor.getColumnIndex(DatabaseHelper.COLUMN_ID);
