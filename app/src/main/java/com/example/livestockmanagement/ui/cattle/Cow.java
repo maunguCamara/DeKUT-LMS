@@ -13,6 +13,8 @@ public class Cow implements Serializable {
     private String purpose;
     private int weight;
 
+    public Cow(){}
+
 
 
     public void setMilkProductionPerDay(double milkProductionPerDay) {
@@ -88,7 +90,7 @@ public class Cow implements Serializable {
     public void updateHealthStatus(HealthStatus newHealthStatus) {
         healthStatus = newHealthStatus;
 
-        CowDAO.updateCowHealthStatus(this.tagNumber, newHealthStatus);
+       // CowDAO.updateCowHealthStatus(this.tagNumber, newHealthStatus);
 
     }
     public double getMilkProductionPerDay() {return milkProductionPerDay;  }
