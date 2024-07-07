@@ -19,7 +19,15 @@
             android:title="@string/menu_milk" />
         <item
             android:id="@+id/nav_health"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_health"
             android:title="@string/menu_health" />
+        <item
+            android:id="@+id/nav_feeding"
+            android:icon="@drawable/ic_feeding"
+            android:title="Feeding"/>
+        <item
+            android:id="@+id/nav_tasks"
+
+            android:title="@string/menu_tasks"/>
     </group>
 </menu>

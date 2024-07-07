@@ -5,7 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.example.livestockmanagement.ui.feeding.FeedingActivity;
+import com.example.livestockmanagement.ui.health.HealthRecordsActivity;
 import com.example.livestockmanagement.ui.milk.MilkRecordsActivity;
+import com.example.livestockmanagement.ui.reports.FinanceReportsActivity;
+import com.example.livestockmanagement.ui.tasks.TasksActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -70,11 +74,41 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         milkCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MilkRecordsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        healthCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, HealthRecordsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        feedingCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (MainActivity.this, FeedingActivity.class);
+            }
+        });
+
+        tasksCardView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent intent = new Intent(MainActivity.this, TasksActivity.class);
+            }
+        });
+
+        reportsCardView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FinanceReportsActivity.class);
             }
         });
         // Passing each menu ID as a set of Ids because each

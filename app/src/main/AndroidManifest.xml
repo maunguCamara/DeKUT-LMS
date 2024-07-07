@@ -35,6 +35,23 @@
             android:name=".ui.cattle.CowDetailsActivity"
             android:exported="false"
             android:theme="@style/Theme.DeKUTLMS"/>
+        <activity
+            android:name=".ui.feeding.FeedingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DeKUTLMS"/>
+        <activity
+            android:name=".ui.health.HealthRecordsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DeKUTLMS"/>
+        <activity
+            android:name=".ui.reports.FinanceReportsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DeKUTLMS"/>
+        <activity
+            android:name=".ui.tasks.TasksActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DeKUTLMS"/>
+
     </application>
 
 </manifest>
