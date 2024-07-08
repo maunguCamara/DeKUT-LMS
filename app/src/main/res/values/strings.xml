@@ -23,7 +23,8 @@
     <string name="menu_reports">Reports</string>
     <string name="menu_feeding">Feeding</string>
     <string name="sync_data">Sync Data</string>
-
+    <string name="text_money_in">Money In:</string>
+    <string name="text_money_out">Money Out:</string>
     <string name="text_cow_name">Cow Name: %1$s</string>
     <string name="text_tag">Tag:</string>
     <string name="text_purpose">Purpose:</string>
@@ -44,4 +45,13 @@
     <string name="text_button">Add Milk Record</string>
     <string name="text_months">months</string>
     <string name="text_kg">kg</string>
+    <string name="text_finance_reports">FINANCE REPORTS</string>
+    <string name="text_balance">Balance</string>
+    <string name="text_milk_sales">MILK SALES</string>
+    <string name="text_milk_sold">Milk Sold:</string>
+    <string name="text_milk_produced">Milk Produced:</string>
+    <string name="text_bulls_sold">Bulls Sold:</string>
+    <string name="text_cows_sold">Cows/Heifers Sold:</string>
+    <string name="text_calves_sold">Calves Sold:</string>
+    <string name="text_animal_sales">ANIMAL SALES</string>
 </resources>
