@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="6dp"
+    android:layout_margin="15dp">
+
+    <TextView
+        android:id="@+id/textViewCustomerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_top"
+        android:text="@string/text_customer_name" />
+
+    <TextView
+        android:id="@+id/textViewLitres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_top"
+        android:text="@string/text_litres" />
+
+    <TextView
+        android:id="@+id/textViewAmountPayable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_top"
+        android:text="@string/text_amount_payable" />
+
+    <TextView
+        android:id="@+id/textViewPaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_top"
+        android:text="@string/text_paid" />
+
+
+</LinearLayout>

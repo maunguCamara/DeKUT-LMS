@@ -54,4 +54,11 @@
     <string name="text_cows_sold">Cows/Heifers Sold:</string>
     <string name="text_calves_sold">Calves Sold:</string>
     <string name="text_animal_sales">ANIMAL SALES</string>
+    <string name="text_amount_payable">Amount Payable</string>
+    <string name="text_paid">Paid</string>
+    <string name="text_litres">Litres</string>
+    <string name="text_customer_name">Customer Name</string>
+    <string name="text_add_milk_record">Add milk record</string>
+
+
 </resources>
