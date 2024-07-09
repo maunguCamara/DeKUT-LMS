@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent (MainActivity.this, FeedingActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(MainActivity.this, TasksActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -109,12 +111,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, FinanceReportsActivity.class);
+                startActivity(intent);
             }
         });
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_cattle, R.id.nav_health)
+                R.id.nav_main, R.id.nav_cattle, R.id.nav_health)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
