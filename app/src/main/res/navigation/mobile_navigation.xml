@@ -29,4 +29,24 @@
         android:label="@string/menu_health"
         tools:layout="@layout/activity_health_records" />
 
+    <activity
+        android:id="@+id/nav_feeding"
+        android:name="com.example.livestockmanagement.ui.feeding.FeedingActivity"
+        android:label="@string/menu_feeding"
+        tools:layout="@layout/activity_feeding"/>
+    <activity
+        android:id="@+id/nav_breeding"
+        android:name="com.example.livestockmanagement.ui.breeding.BreedingActivity"
+        android:label="@string/menu_breeding"
+        tools:layout="@layout/activity_breeding"/>
+    <activity
+        android:id="@+id/nav_reports"
+        android:name="com.example.livestockmanagement.ui.reports.FinanceReportsActivity"
+        android:label="@string/menu_reports"
+        tools:layout="@layout/activity_finance_reports"/>
+    <activity
+        android:id="@+id/nav_tasks"
+        android:name="com.example.livestockmanagement.ui.tasks.TasksActivity"
+        android:label="@string/menu_tasks"
+        tools:layout="@layout/activity_tasks"/>
 </navigation>
