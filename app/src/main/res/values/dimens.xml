@@ -22,6 +22,8 @@
     <dimen name="finance_report_card_view_width">380dp</dimen>
     <dimen name="milk_sales_report_card_view_width">380dp</dimen>
     <dimen name="milk_sales_report_card_view_height">120dp</dimen>
+    <dimen name="search_bar_padding">12dp</dimen>
+    <dimen name="search_bar_padding_top">8dp</dimen>
 
 
 </resources>

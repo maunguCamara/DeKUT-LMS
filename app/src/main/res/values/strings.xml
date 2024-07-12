@@ -61,4 +61,8 @@
     <string name="text_add_milk_record">Add milk record</string>
     <string name="menu_icon">Menu Icon</string>
     <string name="notification_icon">Notification Icon</string>
+    <string name="search_bar_hint">Ear Tag, Animal Name</string>
+    <string name="text_pregnant">Pregnant</string>
+    <string name="text_lactating">Lactating</string>
+    <string name="text_total_animals">Total Animals</string>
 </resources>
