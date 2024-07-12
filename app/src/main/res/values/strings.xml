@@ -59,6 +59,6 @@
     <string name="text_litres">Litres</string>
     <string name="text_customer_name">Customer Name</string>
     <string name="text_add_milk_record">Add milk record</string>
-
-
+    <string name="menu_icon">Menu Icon</string>
+    <string name="notification_icon">Notification Icon</string>
 </resources>

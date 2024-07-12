@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_reports"
         android:title="@string/menu_reports" />
     <item
-        android:id="@+id/navigation_help_desk"
+        android:id="@+id/navigation_finance"
         android:icon="@drawable/ic_help_desk"
         android:title="@string/title_help_desk" />
     <item
