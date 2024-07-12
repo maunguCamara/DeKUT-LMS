@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -103,5 +104,20 @@
         android:layout_marginStart="30dp"
         android:layout_marginBottom="15dp"
         android:text="@string/text_weight"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="262dp"
+        android:layout_height="63dp"
+        app:cardCornerRadius="@dimen/app_corner_radius"
+        app:cardElevation="@dimen/card_elevation">
+        <TextView
+            android:id="@+id/text_health_records"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/menu_health"/>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>
