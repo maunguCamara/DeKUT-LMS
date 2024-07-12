@@ -65,4 +65,5 @@
     <string name="text_pregnant">Pregnant</string>
     <string name="text_lactating">Lactating</string>
     <string name="text_total_animals">Total Animals</string>
+    <string name="text_settings">Settings</string>
 </resources>
