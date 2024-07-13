@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -33,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     private CardView healthCardView;
     private CardView feedingCardView;
     private CardView reportsCardView;
+    private CardView summaryCardView;
+    private TextView textViewPregnant;
+    private TextView textViewLactating;
+    private TextView textViewTotal;
+    private ImageView cowIcon;
     private DrawerLayout drawerLayout;
 
     @Override
@@ -42,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = binding.topBar;
         setSupportActionBar(toolbar);
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
@@ -56,18 +63,23 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_main, R.id.nav_cattle, R.id.nav_health)
+                R.id.nav_cattle, R.id.nav_milk, R.id.nav_health, R.id.nav_feeding, R.id.nav_breeding)
                 .setOpenableLayout(drawerLayout)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        cattleCardView = findViewById(R.id.cattle_card_view);
-        milkCardView = findViewById(R.id.milk_card_view);
-        healthCardView = findViewById(R.id.health_card_view);
-        feedingCardView = findViewById(R.id.feeding_card_view);
-        reportsCardView = findViewById(R.id.finance_report_card_view);
+        cowIcon = binding.cattleIcon;
+        textViewLactating = binding.textViewLactating;
+        textViewPregnant = binding.textViewPregnant;
+        textViewTotal = binding.textViewTotal;
+        cattleCardView = binding.cattleCardView;
+        milkCardView = binding.milkCardView;
+        healthCardView = binding.healthCardView;
+        feedingCardView = binding.feedingCardView;
+        reportsCardView = binding.financeReportCardView;
+        summaryCardView = binding.summaryCardView;
 
 
         cattleCardView.setOnClickListener(new View.OnClickListener() {
