@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = binding.topBar;
         setSupportActionBar(toolbar);
 
+
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
         drawerLayout = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         mAppBarConfiguration = new AppBarConfiguration.Builder(

@@ -175,7 +175,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/cattleIcon"
+                    android:layout_toEndOf="@id/cattleIcon"
                     android:layout_centerVertical="true"
                     android:orientation="horizontal"
                     android:paddingLeft="16dp">
@@ -188,16 +188,17 @@
                         android:paddingEnd="8dp"
                         android:gravity="center">
 
-                        <TextView
-                            android:id="@+id/textViewTotal"
+<!--                        <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1"
                             android:textSize="24sp"
                             android:textColor="@android:color/black"
-                            android:gravity="center" />
+                            android:gravity="center" />-->
 
                         <TextView
+                            android:id="@+id/textViewTotal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/text_total_animals"
@@ -214,16 +215,17 @@
                         android:paddingEnd="8dp"
                         android:gravity="center">
 
-                        <TextView
-                            android:id="@+id/textViewLactating"
+<!--                        <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="1"
                             android:textSize="24sp"
                             android:textColor="@android:color/black"
-                            android:gravity="center" />
+                            android:gravity="center" />-->
 
                         <TextView
+                            android:id="@+id/textViewLactating"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/text_lactating"
@@ -239,16 +241,17 @@
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textViewPregnant"
+<!--                        <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:text="1"
                             android:textColor="@android:color/black"
-                            android:textSize="24sp" />
+                            android:textSize="24sp" />-->
 
                         <TextView
+                            android:id="@+id/textViewPregnant"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:gravity="center"
@@ -279,7 +282,7 @@
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
