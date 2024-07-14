@@ -18,6 +18,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.livestockmanagement.databinding.ActivityMainBinding;
+import com.example.livestockmanagement.ui.cattle.CowListActivity;
 import com.example.livestockmanagement.ui.feeding.FeedingActivity;
 import com.example.livestockmanagement.ui.health.HealthRecordsActivity;
 import com.example.livestockmanagement.ui.milk.MilkRecordsActivity;
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         cattleCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, com.example.livestockmanagement.ui.cattle.CowListActivity.class);
+                Intent intent = new Intent(MainActivity.this, CowListActivity.class);
                 startActivity(intent);
             }
         });
