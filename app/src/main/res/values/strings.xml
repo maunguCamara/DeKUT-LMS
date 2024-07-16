@@ -24,7 +24,7 @@
     <string name="sync_data">Sync Data</string>
     <string name="text_money_in">Money In:</string>
     <string name="text_money_out">Money Out:</string>
-    <string name="text_cow_name">Cow Name: %1$s</string>
+    <string name="text_cow_name">Cow Name: </string>
     <string name="text_tag">Tag:</string>
     <string name="text_purpose">Purpose:</string>
     <string name="text_breed">Breed:</string>
