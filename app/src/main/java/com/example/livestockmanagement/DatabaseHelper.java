@@ -4,10 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -52,6 +48,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
     void addCow(String name, String tagNumber, String breed, String gender, String purpose, int age, int weight){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
@@ -67,7 +64,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             Toast.makeText(context , "Failed", Toast.LENGTH_SHORT).show();
         }else{
             Toast.makeText(context,"Added successfully", Toast.LENGTH_SHORT).show();
-
         }
+    }
+
+    // New function to delete a cow
+    void deleteCow(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, COLUMN_ID + "=?", new String[]{id});
+        if(result == -1) {
+            Toast.makeText(context, "Failed to delete", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Successfully deleted", Toast.LENGTH_SHORT).show();
+        }
+        db.close();
     }
 }
