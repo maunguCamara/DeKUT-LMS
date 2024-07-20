@@ -1,10 +1,5 @@
 package com.example.livestockmanagement.ui.milk;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.livestockmanagement.R;
 
 public class MilkYieldActivity extends AppCompatActivity {
 
@@ -45,14 +42,14 @@ public class MilkYieldActivity extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull MilkRecordViewHolder holder, int position, @NonNull MilkRecord model) {
                 holder.setDate(model.getDate());
                 holder.setYield(model.getYield());
-                holder.setIcon(position % 2 == 0 ? R.drawable.ic_moon : R.drawable.ic_gear);
+                holder.setIcon(position % 2 == 0 ? R.drawable.ic_moon : R.drawable.ic_settings);
             }
 
             @NonNull
             @Override
             public MilkRecordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.milk_record_item, parent, false);
+                        .inflate(R.layout.item_milk_record, parent, false);
                 return new MilkRecordViewHolder(view);
             }
         };

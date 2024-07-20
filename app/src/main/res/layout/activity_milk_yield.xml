@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -17,6 +18,7 @@
         android:background="#FFFFFF">
 
         <ImageButton
+            android:id="@+id/backButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_centerVertical="true"
@@ -32,78 +34,46 @@
             android:textStyle="bold" />
 
         <ImageButton
+            android:id="@+id/addButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:background="@null"
-            android:src="@drawable/ic_add" />
+            android:src="@drawable/ic_add_item" />
     </RelativeLayout>
 
     <!-- List of Milking Records -->
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp" />
+
+        <!-- Delete Button -->
+        <Button
+            android:id="@+id/deleteButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_gravity="bottom"
+            android:layout_margin="16dp"
+            android:background="#FF0000"
+            android:text="Delete"
+            android:textColor="#FFFFFF" />
 
-            <!-- Delete Button -->
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FF0000"
-                android:text="Delete"
-                android:textColor="#FFFFFF" />
-
-            <!-- Milking Record Item (repeated for each record) -->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp">
-
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/ic_moon" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_toEndOf="@id/icon"
-                    android:text="Milking:"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/icon"
-                    android:layout_marginStart="32dp"
-                    android:layout_toEndOf="@id/icon"
-                    android:text="20/02/2023 - 16 lt" />
-            </RelativeLayout>
-
-            <!-- More milking record items would be repeated here -->
-
-        </LinearLayout>
-    </ScrollView>
+    </FrameLayout>
 
     <!-- Bottom Navigation Bar -->
-    <LinearLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="#FFFFFF"
-        android:orientation="horizontal">
-
-        <!-- Bottom navigation icons would go here -->
-
-    </LinearLayout>
+        app:menu="@menu/bottom_nav_menu" />
 
 </LinearLayout>
