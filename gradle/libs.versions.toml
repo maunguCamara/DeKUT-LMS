@@ -10,6 +10,7 @@ lifecycleLivedataKtx = "2.8.3"
 lifecycleViewmodelKtx = "2.8.3"
 navigationFragment = "2.7.7"
 navigationUi = "2.7.7"
+firebase = "32.1.1"  # Add this line for Firebase version
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -22,7 +23,10 @@ lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-lived
 lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
 navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
+# Add these lines for Firebase and navigation runtime
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebase" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebase" }
+navigation-runtime = { group = "androidx.navigation", name = "navigation-runtime", version.ref = "navigationFragment" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-
