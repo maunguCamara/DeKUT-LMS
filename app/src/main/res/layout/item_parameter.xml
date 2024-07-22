@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView android:id="@+id/dry_matter_card_view"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="8dp">
+    android:layout_height="45dp"
+    android:elevation="@dimen/card_elevation"
+    tools:cardCornerRadius="@dimen/card_corner_radius"
+    android:backgroundTint="@color/card_background"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/paramName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
-
-    <EditText
-        android:id="@+id/paramValue"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:gravity="end" />
-</LinearLayout>
+</androidx.cardview.widget.CardView>
