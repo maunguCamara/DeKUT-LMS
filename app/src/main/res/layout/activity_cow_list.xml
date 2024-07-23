@@ -28,6 +28,5 @@
         app:layout_constraintRight_toRightOf="parent"/>
 
     <include
-        android:id="@+id/include"
-        layout="@layout/app_bar_main" />
+         layout="@layout/app_bar_main" />
 </androidx.constraintlayout.widget.ConstraintLayout>
