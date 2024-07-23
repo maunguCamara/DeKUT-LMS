@@ -227,7 +227,27 @@
                         android:layout_margin="@dimen/layout_margin"
                         android:paddingTop="@dimen/margin_top"
                         app:cardCornerRadius="@dimen/app_corner_radius"
-                        app:cardElevation="@dimen/card_elevation" />
+                        app:cardElevation="@dimen/card_elevation" >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menu_breeding"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_forward"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
 
 
                 </GridLayout>
