@@ -74,4 +74,6 @@
     <string name="text_complete">Complete</string>
     <string name="text_comments">Comments</string>
     <string name="text_daily_needs">Daily Needs</string>
+    <string name="image_content_description">Cow Image</string>
+    <string name="nav_icon">Navigation Icon</string>
 </resources>
