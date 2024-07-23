@@ -8,187 +8,266 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <!-- Top Bar -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/top_bar"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:layout_marginTop="4dp"
-            android:background="?attr/colorPrimary"
-            android:padding="16dp"
-            app:contentInsetStart="0dp"
-            app:contentInsetEnd="0dp"
+
+        <include
+            layout="@layout/app_bar_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintBottom_toTopOf="@+id/scrollView"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <ImageView
-                    android:id="@+id/menu_icon"
-                    android:layout_width="28dp"
-                    android:layout_height="54dp"
-                    android:layout_alignParentStart="true"
-                    android:contentDescription="@string/menu_icon"
-                    android:src="@drawable/ic_menu" />
-
-                <ImageView
-                    android:id="@+id/notification_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:contentDescription="@string/notification_icon"
-                    android:src="@drawable/ic_notifications" />
-
-                <ImageView
-                    android:id="@+id/logo"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerInParent="true"
-                    android:contentDescription="@string/app_name"
-                    android:src="@mipmap/ic_launcher" />
-
-            </RelativeLayout>
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <!-- Search Bar -->
-        <EditText
-            android:id="@+id/search_bar"
+        <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/ic_search"
-            android:hint="@string/search_bar_hint"
-            android:padding="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+            app:layout_constraintTop_toBottomOf="@+id/app_bar_main"
+            tools:layout_editor_absoluteY="80dp">
 
-        <!-- Grid Layout -->
-
-        <!-- Summary Section -->
-        <GridLayout
-            android:id="@+id/gridLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:layout_marginTop="76dp"
-            android:alignmentMode="alignMargins"
-            android:columnCount="2"
-            android:columnOrderPreserved="false"
-            android:rowCount="3"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/search_bar">
-
-            <!-- All animals card view -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cattle_card_view"
-                android:layout_width="@dimen/card_view_width"
-                android:layout_height="@dimen/card_view_height"
-                android:layout_margin="@dimen/layout_margin"
-                android:paddingTop="@dimen/margin_top"
-                app:cardCornerRadius="@dimen/app_corner_radius"
-                app:cardElevation="@dimen/card_elevation" />
-
-            <!-- Milk card view -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/milk_card_view"
-                android:layout_width="@dimen/card_view_width"
-                android:layout_height="@dimen/card_view_height"
-                android:layout_margin="@dimen/layout_margin"
-                android:paddingTop="@dimen/margin_top"
-                app:cardCornerRadius="@dimen/app_corner_radius"
-                app:cardElevation="@dimen/card_elevation" />
-
-            <!-- Feeding card view -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/feeding_card_view"
-                android:layout_width="@dimen/card_view_width"
-                android:layout_height="@dimen/card_view_height"
-                android:layout_margin="@dimen/layout_margin"
-                android:paddingTop="@dimen/margin_top"
-                app:cardCornerRadius="@dimen/app_corner_radius"
-                app:cardElevation="@dimen/card_elevation" />
-
-            <!-- Gestation card view -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/health_card_view"
-                android:layout_width="@dimen/card_view_width"
-                android:layout_height="@dimen/card_view_height"
-                android:layout_margin="@dimen/layout_margin"
-                android:paddingTop="@dimen/margin_top"
-                app:cardCornerRadius="@dimen/app_corner_radius"
-                app:cardElevation="@dimen/card_elevation" />
-
-            <!-- Finances card view -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/finance_report_card_view"
-                android:layout_width="@dimen/card_view_width"
-                android:layout_height="@dimen/card_view_height"
-                android:layout_margin="@dimen/layout_margin"
-                android:paddingTop="@dimen/margin_top"
-                app:cardCornerRadius="@dimen/app_corner_radius"
-                app:cardElevation="@dimen/card_elevation" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/breeding_card_view"
-                android:layout_width="@dimen/card_view_width"
-                android:layout_height="@dimen/card_view_height"
-                android:layout_margin="@dimen/layout_margin"
-                android:paddingTop="@dimen/margin_top"
-                app:cardCornerRadius="@dimen/app_corner_radius"
-                app:cardElevation="@dimen/card_elevation" />
-
-
-        </GridLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/summaryCardView"
-            android:layout_width="match_parent"
-            android:layout_height="129dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayout">
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="16dp">
-
-                <ImageView
-                    android:id="@+id/cattleIcon"
-                    android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- Search Bar -->
+                <EditText
+                    android:id="@+id/search_bar"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher" />
+                    android:layout_margin="8dp"
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:drawableStart="@drawable/ic_search"
+                    android:hint="@string/search_bar_hint"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/app_bar_main" />
+
+                <!-- Grid Layout -->
+                <GridLayout
+                    android:id="@+id/gridLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/cattleIcon"
-                    android:layout_centerVertical="true"
-                    android:orientation="horizontal"
-                    android:paddingLeft="16dp">
+                    android:layout_margin="16dp"
+                    android:alignmentMode="alignMargins"
+                    android:columnCount="2"
+                    android:columnOrderPreserved="false"
+                    android:rowCount="3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/search_bar">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        android:paddingEnd="8dp"
-                        android:gravity="center">
+                    <!-- All animals card view -->
+                    <!-- All animals card view -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cattle_card_view"
+                        android:layout_width="@dimen/card_view_width"
+                        android:layout_height="@dimen/card_view_height"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:paddingTop="@dimen/margin_top"
+                        app:cardCornerRadius="@dimen/app_corner_radius"
+                        app:cardElevation="@dimen/card_elevation">
 
-<!--                        <TextView
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cattle"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_forward"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"/>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <!-- Milk card view -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/milk_card_view"
+                        android:layout_width="@dimen/card_view_width"
+                        android:layout_height="@dimen/card_view_height"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:paddingTop="@dimen/margin_top"
+                        app:cardCornerRadius="@dimen/app_corner_radius"
+                        app:cardElevation="@dimen/card_elevation">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menu_milk"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_forward"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Feeding card view -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/feeding_card_view"
+                        android:layout_width="@dimen/card_view_width"
+                        android:layout_height="@dimen/card_view_height"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:paddingTop="@dimen/margin_top"
+                        app:cardCornerRadius="@dimen/app_corner_radius"
+                        app:cardElevation="@dimen/card_elevation" >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menu_feeding"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_forward"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"/>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Gestation card view -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/health_card_view"
+                        android:layout_width="@dimen/card_view_width"
+                        android:layout_height="@dimen/card_view_height"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:paddingTop="@dimen/margin_top"
+                        app:cardCornerRadius="@dimen/app_corner_radius"
+                        app:cardElevation="@dimen/card_elevation" >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menu_reports"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_forward"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Finances card view -->
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/finance_report_card_view"
+                        android:layout_width="@dimen/card_view_width"
+                        android:layout_height="@dimen/card_view_height"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:paddingTop="@dimen/margin_top"
+                        app:cardCornerRadius="@dimen/app_corner_radius"
+                        app:cardElevation="@dimen/card_elevation" >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="16dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/menu_tasks"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"/>
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_forward"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"/>
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/breeding_card_view"
+                        android:layout_width="@dimen/card_view_width"
+                        android:layout_height="@dimen/card_view_height"
+                        android:layout_margin="@dimen/layout_margin"
+                        android:paddingTop="@dimen/margin_top"
+                        app:cardCornerRadius="@dimen/app_corner_radius"
+                        app:cardElevation="@dimen/card_elevation" />
+
+
+                </GridLayout>
+                <!-- Summary Section -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/summaryCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/gridLayout">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:id="@+id/cattleIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_launcher" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toEndOf="@id/cattleIcon"
+                            android:orientation="horizontal"
+                            android:paddingLeft="16dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingEnd="8dp">
+
+                                <!--                        <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -197,25 +276,25 @@
                             android:textColor="@android:color/black"
                             android:gravity="center" />-->
 
-                        <TextView
-                            android:id="@+id/textViewTotal"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/text_total_animals"
-                            android:textSize="12sp"
-                            android:textColor="@android:color/black"
-                            android:gravity="center" />
-                    </LinearLayout>
+                                <TextView
+                                    android:id="@+id/textViewTotal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/text_total_animals"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        android:paddingEnd="8dp"
-                        android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:paddingEnd="8dp">
 
-<!--                        <TextView
+                                <!--                        <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -224,24 +303,24 @@
                             android:textColor="@android:color/black"
                             android:gravity="center" />-->
 
-                        <TextView
-                            android:id="@+id/textViewLactating"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/text_lactating"
-                            android:textSize="12sp"
-                            android:textColor="@android:color/black"
-                            android:gravity="center" />
-                    </LinearLayout>
+                                <TextView
+                                    android:id="@+id/textViewLactating"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/text_lactating"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center"
+                                android:orientation="vertical">
 
-<!--                        <TextView
+                                <!--                        <TextView
 
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -250,35 +329,39 @@
                             android:textColor="@android:color/black"
                             android:textSize="24sp" />-->
 
-                        <TextView
-                            android:id="@+id/textViewPregnant"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="@string/text_pregnant"
-                            android:textColor="@android:color/black"
-                            android:textSize="12sp" />
-                    </LinearLayout>
+                                <TextView
+                                    android:id="@+id/textViewPregnant"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/text_pregnant"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
 
-                </LinearLayout>
+                        </LinearLayout>
 
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
 
         <!-- Floating Action Button -->
 
         <!-- Bottom Navigation -->
+
+
+
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginBottom="32dp"
             android:src="@drawable/ic_add_item"
-            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"/>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
