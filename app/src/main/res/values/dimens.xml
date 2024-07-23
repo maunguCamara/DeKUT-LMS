@@ -24,6 +24,9 @@
     <dimen name="milk_sales_report_card_view_height">120dp</dimen>
     <dimen name="search_bar_padding">12dp</dimen>
     <dimen name="search_bar_padding_top">8dp</dimen>
+    <dimen name="summary_card_view">380dp</dimen>
+    <dimen name="relative_layout_padding">16dp</dimen>
+    <dimen name="summary_card_view_padding">10dp</dimen>
 
 
 </resources>

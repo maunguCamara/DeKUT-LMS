@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/Theme.DeKUTLMS.AppBarOverlay">
@@ -16,7 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/toolbar_height"
             android:background="@color/app_background"
-            app:popupTheme="@style/Theme.DeKUTLMS.PopupOverlay" >
+            app:popupTheme="@style/Theme.DeKUTLMS.PopupOverlay">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">

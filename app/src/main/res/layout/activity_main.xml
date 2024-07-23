@@ -234,8 +234,10 @@
                 <!-- Summary Section -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/summaryCardView"
-                    android:layout_width="match_parent"
+                    android:layout_width="@dimen/summary_card_view"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/summary_card_view_padding"
+                    app:cardCornerRadius="@dimen/app_corner_radius"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/gridLayout">
