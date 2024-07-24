@@ -18,10 +18,15 @@
         tools:layout="@layout/activity_cow_list" />
 
     <activity
-        android:id="@+id/nav_milk"
+        android:id="@+id/nav_milk_records"
         android:name="com.example.livestockmanagement.ui.milk.MilkRecordsActivity"
         android:label="@string/menu_milk_records"
-        tools:layout="@layout/fragment_milk" />
+        tools:layout="@layout/activity_milk_records" />
+    <activity
+        android:id="@+id/nav_milk_orders"
+        android:name="com.example.livestockmanagement.ui.milk.MilkOrderActivity"
+        android:label="@string/menu_milk_orders"
+        tools:layout="@layout/activity_milk_order"/>
 
     <activity
         android:id="@+id/nav_health"
@@ -46,7 +51,10 @@
         tools:layout="@layout/activity_finance_reports"/>
     <activity
         android:id="@+id/nav_tasks"
-        android:name="com.example.livestockmanagement.ui.tasks.TasksActivity"
-        android:label="@string/menu_tasks"
-        tools:layout="@layout/activity_tasks"/>
+        android:name="com.example.livestockmanagement.ui.tasks.TasksActvity"
+        android:label="Reports"
+        tools:layout="@layout/activity_tasks"
+        />
+
+
 </navigation>
