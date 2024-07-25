@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
         summaryCardView = binding.summaryCardView;
 
 
+
+/*
         cattleCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+ */
     }
 
     @Override
