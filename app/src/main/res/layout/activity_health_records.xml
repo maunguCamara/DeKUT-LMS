@@ -92,12 +92,13 @@
             android:text="Record Date"
             android:layout_marginBottom="8dp"/>
 
-        <Spinner
+        <EditText
+            android:id="@+id/record_date_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            android:layout_marginBottom="16dp"/>
+            android:hint="Select Date"
+            android:focusable="false"
+            android:clickable="true" />
 
         <TextView
             android:layout_width="wrap_content"

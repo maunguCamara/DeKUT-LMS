@@ -1,11 +1,13 @@
 package com.example.livestockmanagement.ui.health;
-//To include treatment and vaccination records
+
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +17,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 
 public class HealthRecordsActivity extends AppCompatActivity {
 
-    private Spinner recordTypeSpinner, parentFlockSpinner, recordDateSpinner;
+    private Spinner recordTypeSpinner, parentFlockSpinner;
+    private TextView recordDateTextView;
     private EditText diseaseTypeEditText, dosageEditText, medicationEditText, noteEditText;
     private Button saveButton;
     private FloatingActionButton fab;
@@ -37,7 +41,7 @@ public class HealthRecordsActivity extends AppCompatActivity {
     private void initializeViews() {
         recordTypeSpinner = findViewById(R.id.record_type_spinner);
         parentFlockSpinner = findViewById(R.id.parent_flock_spinner);
-        recordDateSpinner = findViewById(R.id.record_date_spinner);
+        recordDateTextView = findViewById(R.id.record_date_textview);
         diseaseTypeEditText = findViewById(R.id.disease_type_edittext);
         dosageEditText = findViewById(R.id.dosage_edittext);
         medicationEditText = findViewById(R.id.medication_edittext);
@@ -59,12 +63,6 @@ public class HealthRecordsActivity extends AppCompatActivity {
         ArrayAdapter<String> parentFlockAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, parentFlocks);
         parentFlockAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         parentFlockSpinner.setAdapter(parentFlockAdapter);
-
-        // Setup Record Date Spinner
-        ArrayList<String> recordDates = new ArrayList<>(Arrays.asList("Today", "Yesterday", "Last Week", "Custom"));
-        ArrayAdapter<String> recordDateAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, recordDates);
-        recordDateAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        recordDateSpinner.setAdapter(recordDateAdapter);
     }
 
     private void setupListeners() {
@@ -88,6 +86,30 @@ public class HealthRecordsActivity extends AppCompatActivity {
             // You'll need to implement this based on your menu items
             return true;
         });
+
+        recordDateTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+    }
+
+    private void showDatePickerDialog() {
+        final Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
+                        recordDateTextView.setText(selectedDate);
+                    }
+                }, year, month, day);
+        datePickerDialog.show();
     }
 
     private void saveHealthRecord() {
@@ -95,7 +117,7 @@ public class HealthRecordsActivity extends AppCompatActivity {
         // This is where you'd typically save to a database or send to an API
         String recordType = recordTypeSpinner.getSelectedItem().toString();
         String parentFlock = parentFlockSpinner.getSelectedItem().toString();
-        String recordDate = recordDateSpinner.getSelectedItem().toString();
+        String recordDate = recordDateTextView.getText().toString();
         String diseaseType = diseaseTypeEditText.getText().toString();
         String dosage = dosageEditText.getText().toString();
         String medication = medicationEditText.getText().toString();
@@ -112,7 +134,7 @@ public class HealthRecordsActivity extends AppCompatActivity {
     private void clearForm() {
         recordTypeSpinner.setSelection(0);
         parentFlockSpinner.setSelection(0);
-        recordDateSpinner.setSelection(0);
+        recordDateTextView.setText("");
         diseaseTypeEditText.setText("");
         dosageEditText.setText("");
         medicationEditText.setText("");
