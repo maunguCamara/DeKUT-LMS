@@ -1,28 +1,33 @@
 package com.example.livestockmanagement.ui.health;
 
-import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.livestockmanagement.MainActivity;
+import com.example.livestockmanagement.R;
+import com.example.livestockmanagement.ui.home.HomeActivity;
+import com.example.livestockmanagement.ui.reports.FinanceReportsActivity;
+import com.example.livestockmanagement.ui.tasks.TasksActivity;
+import com.example.livestockmanagement.ui.reports.ReportsActivity;
+import com.example.livestockmanagement.ui.settings.SettingsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 
 public class HealthRecordsActivity extends AppCompatActivity {
 
     private Spinner recordTypeSpinner, parentFlockSpinner;
-    private TextView recordDateTextView;
     private EditText diseaseTypeEditText, dosageEditText, medicationEditText, noteEditText;
     private Button saveButton;
     private FloatingActionButton fab;
@@ -41,7 +46,6 @@ public class HealthRecordsActivity extends AppCompatActivity {
     private void initializeViews() {
         recordTypeSpinner = findViewById(R.id.record_type_spinner);
         parentFlockSpinner = findViewById(R.id.parent_flock_spinner);
-        recordDateTextView = findViewById(R.id.record_date_textview);
         diseaseTypeEditText = findViewById(R.id.disease_type_edittext);
         dosageEditText = findViewById(R.id.dosage_edittext);
         medicationEditText = findViewById(R.id.medication_edittext);
@@ -82,34 +86,25 @@ public class HealthRecordsActivity extends AppCompatActivity {
         });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            // Handle navigation item selection
-            // You'll need to implement this based on your menu items
-            return true;
-        });
+            Intent intent = null;
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    intent = new Intent(HealthRecordsActivity.this, MainActivity.class);
+                    break;
+                case R.id.navigation_tasks:
+                    intent = new Intent(HealthRecordsActivity.this, TasksActivity.class);
+                    break;
+                case R.id.navigation_reports:
+                    intent = new Intent(HealthRecordsActivity.this, FinanceReportsActivity.class);
+                    break;
 
-        recordDateTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDialog();
             }
+            if (intent != null) {
+                startActivity(intent);
+                return true;
+            }
+            return false;
         });
-    }
-
-    private void showDatePickerDialog() {
-        final Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-        int month = calendar.get(Calendar.MONTH);
-        int day = calendar.get(Calendar.DAY_OF_MONTH);
-
-        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
-                new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        String selectedDate = dayOfMonth + "/" + (monthOfYear + 1) + "/" + year;
-                        recordDateTextView.setText(selectedDate);
-                    }
-                }, year, month, day);
-        datePickerDialog.show();
     }
 
     private void saveHealthRecord() {
@@ -117,14 +112,13 @@ public class HealthRecordsActivity extends AppCompatActivity {
         // This is where you'd typically save to a database or send to an API
         String recordType = recordTypeSpinner.getSelectedItem().toString();
         String parentFlock = parentFlockSpinner.getSelectedItem().toString();
-        String recordDate = recordDateTextView.getText().toString();
         String diseaseType = diseaseTypeEditText.getText().toString();
         String dosage = dosageEditText.getText().toString();
         String medication = medicationEditText.getText().toString();
         String note = noteEditText.getText().toString();
 
         // For now, just show a toast message
-        String message = "Record saved: " + recordType + ", " + parentFlock + ", " + recordDate;
+        String message = "Record saved: " + recordType + ", " + parentFlock + ", " + diseaseType;
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
         // Clear the form or navigate back
@@ -134,10 +128,10 @@ public class HealthRecordsActivity extends AppCompatActivity {
     private void clearForm() {
         recordTypeSpinner.setSelection(0);
         parentFlockSpinner.setSelection(0);
-        recordDateTextView.setText("");
         diseaseTypeEditText.setText("");
         dosageEditText.setText("");
         medicationEditText.setText("");
         noteEditText.setText("");
     }
 }
+
