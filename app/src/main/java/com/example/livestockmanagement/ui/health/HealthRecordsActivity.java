@@ -118,6 +118,8 @@ public class HealthRecordsActivity extends AppCompatActivity {
         String note = noteEditText.getText().toString();
 
         // For now, just show a toast message
+
+        // TODO Add logic to push data to db
         String message = "Record saved: " + recordType + ", " + parentFlock + ", " + diseaseType;
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
