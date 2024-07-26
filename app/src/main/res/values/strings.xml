@@ -86,4 +86,13 @@
     <string name="text_ingredients">Ingredients (Name, Quantity, Unit)</string>
     <string name="text_add">+ Add</string>
     <string name="text_remove">- Remove</string>
+    <string name="text_type_of_record">Type of record</string>
+    <string name="text_parent_flock">Parent Flock</string>
+    <string name="text_disease_type">Disease type</string>
+    <string name="text_dosage">Dosage</string>
+    <string name="text_medication">Medication</string>
+    <string name="text_record_date">Record Date</string>
+    <string name="text_select_date">Select Date</string>
+    <string name="hint_content">Write something worth remembering</string>
+    <string name="text_save_and_exit">Save and Exit</string>
 </resources>

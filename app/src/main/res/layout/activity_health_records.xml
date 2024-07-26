@@ -7,12 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Medical Record"
+            android:text="@string/menu_health"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_gravity="center_horizontal"
@@ -21,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Type of record"
+            android:text="@string/text_type_of_record"
             android:layout_marginBottom="8dp"/>
 
         <Spinner
@@ -47,13 +51,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Disease type"
+            android:text="@string/text_disease_type"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Disease type"
+            android:hint="@string/text_disease_type"
             android:background="@android:drawable/edit_text"
             android:padding="8dp"
             android:layout_marginBottom="16dp"/>
@@ -61,13 +65,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dosage"
+            android:text="@string/text_dosage"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Dosage"
+            android:hint="@string/text_dosage"
             android:background="@android:drawable/edit_text"
             android:padding="8dp"
             android:layout_marginBottom="16dp"/>
@@ -75,13 +79,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Medication"
+            android:text="@string/text_medication"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Medication"
+            android:hint="@string/text_medication"
             android:background="@android:drawable/edit_text"
             android:padding="8dp"
             android:layout_marginBottom="16dp"/>
@@ -89,27 +93,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Record Date"
+            android:text="@string/text_record_date"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:id="@+id/record_date_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Select Date"
+            android:hint="@string/text_select_date"
             android:focusable="false"
             android:clickable="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Note"
+            android:text="@string/text_note"
             android:layout_marginBottom="8dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Write something worth remembering"
+            android:hint="@string/hint_content"
             android:background="@android:drawable/edit_text"
             android:padding="8dp"
             android:minLines="3"
@@ -119,7 +123,7 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save and exit"
+            android:text="@string/text_save_and_exit"
             android:backgroundTint="#FFA500"
             android:textColor="#FFFFFF"/>
 
