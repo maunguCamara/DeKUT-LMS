@@ -76,4 +76,14 @@
     <string name="text_daily_needs">Daily Needs</string>
     <string name="image_content_description">Cow Image</string>
     <string name="nav_icon">Navigation Icon</string>
+    <string name="text_save_changes">Save Changes</string>
+    <string name="text_note">Notes</string>
+    <string name="text_nutritional_information">Nutritional Information</string>
+    <string name="text_select_animal">Select Animal</string>
+    <string name="text_feed_name">Feed Name</string>
+    <string name="text_create_feed_formula">Feed Formula</string>
+    <string name="text_quantity">Quantity</string>
+    <string name="text_ingredients">Ingredients (Name, Quantity, Unit)</string>
+    <string name="text_add">+ Add</string>
+    <string name="text_remove">- Remove</string>
 </resources>

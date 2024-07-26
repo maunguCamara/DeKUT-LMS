@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,7 +16,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Create Feed Formula"
+                android:text="@string/text_create_feed_formula"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="center_horizontal"
@@ -24,13 +25,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Feed Name"
+                android:text="@string/text_feed_name"
                 android:layout_marginBottom="8dp"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Feed name"
+                android:hint="@string/text_feed_name"
                 android:background="@android:drawable/edit_text"
                 android:padding="8dp"
                 android:layout_marginBottom="16dp"/>
@@ -38,7 +39,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ingredients (Name, Quantity, Unit)"
+                android:text="@string/text_ingredients"
                 android:layout_marginBottom="8dp"/>
 
             <LinearLayout
@@ -51,7 +52,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Name"
+                    android:hint="@string/text_name"
                     android:background="@android:drawable/edit_text"
                     android:padding="8dp"
                     android:layout_marginEnd="4dp"/>
@@ -60,7 +61,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="Quantity"
+                    android:hint="@string/text_quantity"
                     android:background="@android:drawable/edit_text"
                     android:padding="8dp"
                     android:layout_marginStart="4dp"
@@ -84,19 +85,19 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="- Remove"
+                    android:text="@string/text_remove"
                     android:layout_marginEnd="8dp"/>
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+ Add"/>
+                    android:text="@string/text_add"/>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select Animal"
+                android:text="@string/text_select_animal"
                 android:layout_marginBottom="8dp"/>
 
             <Spinner
@@ -109,7 +110,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nutritional Information"
+                android:text="@string/text_nutritional_information"
                 android:layout_marginBottom="8dp"/>
 
             <EditText
@@ -137,7 +138,7 @@
                 android:layout_marginBottom="16dp"/>
 
             <Button
-                android:layout_width="match_cast_content_description"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Save changes"
                 android:backgroundTint="#FFA500"
@@ -145,5 +146,13 @@
 
         </LinearLayout>
     </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
