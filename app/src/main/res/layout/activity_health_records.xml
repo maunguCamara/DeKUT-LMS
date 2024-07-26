@@ -29,6 +29,7 @@
             android:layout_marginBottom="8dp"/>
 
         <Spinner
+            android:id="@+id/record_type_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
@@ -42,6 +43,7 @@
             android:layout_marginBottom="8dp"/>
 
         <Spinner
+            android:id="@+id/parent_flock_spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
@@ -55,6 +57,7 @@
             android:layout_marginBottom="8dp"/>
 
         <EditText
+            android:id="@+id/disease_type_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_disease_type"
@@ -69,6 +72,7 @@
             android:layout_marginBottom="8dp"/>
 
         <EditText
+            android:id="@+id/dosage_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_dosage"
@@ -83,6 +87,7 @@
             android:layout_marginBottom="8dp"/>
 
         <EditText
+            android:id="@+id/medication_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/text_medication"
@@ -111,6 +116,7 @@
             android:layout_marginBottom="8dp"/>
 
         <EditText
+            android:id="@+id/note_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_content"
@@ -121,6 +127,7 @@
             android:layout_marginBottom="16dp"/>
 
         <Button
+            android="@+id/save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_save_and_exit"
