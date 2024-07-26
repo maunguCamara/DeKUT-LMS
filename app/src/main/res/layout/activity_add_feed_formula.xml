@@ -29,12 +29,13 @@
                 android:layout_marginBottom="8dp"/>
 
             <EditText
+                android:id="@+id/feed_name_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/text_feed_name"
+                android:layout_marginBottom="16dp"
                 android:background="@android:drawable/edit_text"
-                android:padding="8dp"
-                android:layout_marginBottom="16dp"/>
+                android:hint="@string/text_feed_name"
+                android:padding="8dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,6 +50,7 @@
                 android:layout_marginBottom="8dp">
 
                 <EditText
+                    android:id="@+id/ingredient_name_edit_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -58,6 +60,7 @@
                     android:layout_marginEnd="4dp"/>
 
                 <EditText
+                    android:id="@+id/ingredient_quantity_edit_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -68,6 +71,8 @@
                     android:layout_marginEnd="4dp"/>
 
                 <Spinner
+
+                    android:id="@+id/ingredient_unit_spinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -83,12 +88,14 @@
                 android:layout_marginBottom="16dp">
 
                 <Button
+                    android:id="@+id/remove_ingredient_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_remove"
                     android:layout_marginEnd="8dp"/>
 
                 <Button
+                    android:id="@+id/add_ingredient_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/text_add"/>
@@ -101,6 +108,7 @@
                 android:layout_marginBottom="8dp"/>
 
             <Spinner
+                android:id="@+id/animal_type_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/btn_dropdown"
@@ -114,6 +122,7 @@
                 android:layout_marginBottom="8dp"/>
 
             <EditText
+                android:id="@+id/nutritional_info_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/edit_text"
@@ -125,10 +134,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Note"
+                android:text="@string/text_note"
                 android:layout_marginBottom="8dp"/>
 
             <EditText
+                android:id="@+id/note_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:drawable/edit_text"
@@ -138,6 +148,7 @@
                 android:layout_marginBottom="16dp"/>
 
             <Button
+                android:id="@+id/save_changes_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Save changes"
